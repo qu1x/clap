@@ -1,6 +1,11 @@
+// iter_matches specific
+#[cfg(feature = "iter_matches")]
+use indexmap::IndexMap as HashMap;
+
 // Std
-use std::borrow::Cow;
+#[cfg(not(feature = "iter_matches"))]
 use std::collections::HashMap;
+use std::borrow::Cow;
 use std::ffi::{OsStr, OsString};
 use std::iter::Map;
 use std::slice::Iter;
